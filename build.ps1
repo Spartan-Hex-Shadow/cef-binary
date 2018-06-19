@@ -453,7 +453,7 @@ try
 
 		# Build sdk
 		$Filename = Resolve-Path ".\nuget\BTL.cef.sdk.props"
-		$Text = (Get-Content $Filename) -replace '<CefSdkVer>.*<\/CefSdkVer>', "<CefSdkVer>cef.sdk.$CefPackageVersion</CefSdkVer>"
+		$Text = (Get-Content $Filename) -replace '<CefSdkVer>.*<\/CefSdkVer>', "<CefSdkVer>BTL.cef.sdk.$CefPackageVersion</CefSdkVer>"
 		[System.IO.File]::WriteAllLines($Filename, $Text)
 
 		. $Nuget pack nuget\BTL.cef.sdk.nuspec -NoPackageAnalysis -Version $CefPackageVersion -OutputDirectory nuget
