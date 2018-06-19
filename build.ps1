@@ -446,23 +446,23 @@ try
 		}
 
 		# Build 32bit packages
-		. $Nuget pack nuget\cef.redist.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;Platform=x86;CPlatform=windows32;' -OutputDirectory nuget
+		. $Nuget pack nuget\BTL.cef.redist.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;Platform=x86;CPlatform=windows32;' -OutputDirectory nuget
 
 		# Build 64bit packages
-		. $Nuget pack nuget\cef.redist.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;Platform=x64;CPlatform=windows64;' -OutputDirectory nuget
+		. $Nuget pack nuget\BTL.cef.redist.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;Platform=x64;CPlatform=windows64;' -OutputDirectory nuget
 
 		# Build sdk
-		$Filename = Resolve-Path ".\nuget\cef.sdk.props"
+		$Filename = Resolve-Path ".\nuget\BTL.cef.sdk.props"
 		$Text = (Get-Content $Filename) -replace '<CefSdkVer>.*<\/CefSdkVer>', "<CefSdkVer>cef.sdk.$CefPackageVersion</CefSdkVer>"
 		[System.IO.File]::WriteAllLines($Filename, $Text)
 
-		. $Nuget pack nuget\cef.sdk.nuspec -NoPackageAnalysis -Version $CefPackageVersion -OutputDirectory nuget
+		. $Nuget pack nuget\BTL.cef.sdk.nuspec -NoPackageAnalysis -Version $CefPackageVersion -OutputDirectory nuget
 	
 		if ($env:APPVEYOR_REPO_TAG -eq "True")
 		{
-			appveyor PushArtifact "nuget\cef.redist.x86.$CefPackageVersion.nupkg"
-			appveyor PushArtifact "nuget\cef.redist.x64.$CefPackageVersion.nupkg"
-			appveyor PushArtifact "nuget\cef.sdk.$CefPackageVersion.nupkg"
+			appveyor PushArtifact "nuget\BTL.cef.redist.x86.$CefPackageVersion.nupkg"
+			appveyor PushArtifact "nuget\BTL.cef.redist.x64.$CefPackageVersion.nupkg"
+			appveyor PushArtifact "nuget\BTL.cef.sdk.$CefPackageVersion.nupkg"
 		}
 	}
 

@@ -21,6 +21,6 @@
 -->
     <file src="..\CEF\**\*.*" target="CEF" />
     
-    <file src="cef.sdk.props" target="build" />
+    <file src="BTL.cef.sdk.props" target="build" />
   </files>
 </package>
