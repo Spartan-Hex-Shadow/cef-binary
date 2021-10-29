@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>cef.redist.$Platform$</id>
+    <id>BIL.cef.redist.$Platform$</id>
     <version>$version$</version>
     <authors>The Chromium Embedded Framework Authors</authors>
     <owners>The CefSharp Authors</owners>
@@ -26,7 +26,7 @@
 	<file src="..\cef_binary_3.y.z_$CPlatform$\LICENSE.txt" target="CEF\LICENSE.txt" />
 	<file src="..\cef_binary_3.y.z_$CPlatform$\LICENSE.txt" target="LICENSE.txt" />
 
-    <file src="cef.redist.$Platform$.props" target="build\" />
-	<file src="cef.redist.$Platform$.props" target="buildTransitive\" />	
+    <file src="BTL.cef.redist.$Platform$.props" target="build\" />
+	<file src="BTL.cef.redist.$Platform$.props" target="buildTransitive\" />	
   </files>
 </package>
