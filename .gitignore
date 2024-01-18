@@ -17,3 +17,4 @@ _ReSharper*
 out
 *Thumbs.db
 *.bz2
+/.vs
