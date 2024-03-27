@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="5.0.0">
-    <id>chromiumembeddedframework.runtime</id>
+    <id>BTL.chromiumembeddedframework.runtime</id>
     <version>$version$</version>
     <authors>The Chromium Embedded Framework Authors</authors>
     <owners>The CefSharp Authors</owners>
@@ -29,8 +29,8 @@
 	<file src="..\cef_binary_3.y.z_windows64\Resources\locales\*.pak" target="CEF\win-x64\locales"/>
     <file src="..\cef_binary_3.y.z_windowsarm64\Resources\locales\*.pak" target="CEF\win-arm64\locales"/>
     <file src="..\cef\LICENSE.txt" target="LICENSE.txt" />
-    <file src="chromiumembeddedframework.runtime.json" target="runtime.json" />
-	<file src="chromiumembeddedframework.runtime.props" target="buildTransitive\" />
+    <file src="BTL.chromiumembeddedframework.runtime.json" target="runtime.json" />
+	<file src="BTL.chromiumembeddedframework.runtime.props" target="buildTransitive\" />
     <file src="cef128x128.png" target="images\" />
   </files>
 </package>

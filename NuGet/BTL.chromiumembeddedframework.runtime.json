@@ -1,0 +1,19 @@
+{
+  "runtimes": {
+    "win-x64": {
+      "BTL.chromiumembeddedframework.runtime": {
+        "BTL.chromiumembeddedframework.runtime.win-x64": "118.7.1"
+      }
+    },
+    "win-x86": {
+      "BTL.chromiumembeddedframework.runtime": {
+        "BTL.chromiumembeddedframework.runtime.win-x86": "118.7.1"
+      }
+    },
+    "win-arm64": {
+      "BTL.chromiumembeddedframework.runtime": {
+        "BTL.chromiumembeddedframework.runtime.win-arm64": "118.7.1"
+      }
+    },
+  }
+}

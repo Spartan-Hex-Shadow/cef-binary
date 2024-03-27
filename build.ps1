@@ -14,7 +14,7 @@ param(
 	[string] $CefBinaryDir = "../cefsource/chromium/src/cef/binary_distrib/",
 
 	[Parameter(Position = 3)]
-	$CefVersion = "v120.2.5+g618ea46+chromium-120.0.6099.216",
+	$CefVersion = "v118.7.1+g99817d2+chromium-118.0.5993.119",
 
 	[ValidateSet("tar.bz2","zip","7z")]
 	[Parameter(Position = 4)]
@@ -27,7 +27,7 @@ param(
 	[string] $Suffix,
 
 	[Parameter(Position = 7)]
-	[string] $BuildArches = "win-x86;win-x64;win-arm64"
+	[string] $BuildArches = "win-x86;win-x64"
 )
 
 Set-StrictMode -version latest
@@ -155,7 +155,7 @@ function DownloadDependencies()
 
 function WriteVersionToRuntimeJson
 {
-	$Filename = Join-Path $WorkingDir NuGet\chromiumembeddedframework.runtime.json
+	$Filename = Join-Path $WorkingDir NuGet\BTL.chromiumembeddedframework.runtime.json
 		
 	Write-Diagnostic  "Write Version ($CefPackageVersion) to $Filename"
 	$Regex1  = '": ".*"';
@@ -449,11 +449,11 @@ function Nupkg
 			. $Nuget pack nuget\BTL.cef.redist.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties "Configuration=Release;Platform=$arch;CPlatform=$archLong;" -OutputDirectory nuget
 		}
 
-		. $Nuget pack nuget\chromiumembeddedframework.runtime.win.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties "Configuration=Release;Platform=$arch;CPlatform=$archLong;" -OutputDirectory nuget
+		. $Nuget pack nuget\BTL.chromiumembeddedframework.runtime.win.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties "Configuration=Release;Platform=$arch;CPlatform=$archLong;" -OutputDirectory nuget
 	}
 		
 	# Meta Package
-	. $Nuget pack nuget\chromiumembeddedframework.runtime.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;' -OutputDirectory nuget
+	. $Nuget pack nuget\BTL.chromiumembeddedframework.runtime.nuspec -NoPackageAnalysis -Version $CefPackageVersion -Properties 'Configuration=Release;' -OutputDirectory nuget
 
 	# Build sdk
 	$Filename = Resolve-Path ".\nuget\BTL.cef.sdk.props"
